@@ -2,7 +2,7 @@
 
 a minimal nix config, thanks thou vow for supporter.
 
-# structure
+# **structure**:
 ```
 ├── flake.lock
 ├── flake.nix
@@ -29,7 +29,7 @@ a minimal nix config, thanks thou vow for supporter.
     │   └── services.nix
     └── system-pkgs.nix
 ```
-# storage
+# **storage**:
 ```
 ├─nvme0n1p1 259:1    0     4G  0 part /boot
 ├─nvme0n1p2 259:2    0  14,9G  0 part [SWAP]
@@ -42,9 +42,9 @@ a minimal nix config, thanks thou vow for supporter.
 - GPU:gtx 1060 3GB 
 - RAM:32GB DDR3
 
-## **DE** 
+## **DE** :
 - KDE Plasma 🙏 
 - KWin (Wayland)
 
 ## **current packages**:
- 1387 (nix-system), 962 (nix-user), 14 (flatpak-user)
+1455 (nix-system), 962 (nix-user), 27 (flatpak-user)
