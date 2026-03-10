@@ -7,7 +7,7 @@
 {
   imports =
     [ 
-      ./DE/gnome.nix
+      #./DE/gnome.nix
       ./DE/gnome-apps.nix
       ./DE/kde.nix
       ./fs.nix
@@ -19,14 +19,13 @@
     ];
    
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-    programs.nh = {
-       enable = true;
-       flake = "/ethereal";
-  };
-
-
-  # Bootloader.
+  
+  #nh 
+  environment.variables.NH_FLAKE = "/ethereal";
+  environment.variables.NH_OS_FLAKE = "/ethereal";
+  environment.variables.NH_HOME_FLAKE = "/ethereal";
+  
+  # Bootloader.  
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
