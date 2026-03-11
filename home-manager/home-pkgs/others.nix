@@ -20,10 +20,10 @@ pkgs,
  vlc 
  
  #editor
- vscodium
+ vscode
  kdePackages.kate
 
- #for vscodium
+ #for vscode
  nixfmt
  direnv
 
