@@ -2,11 +2,12 @@
 pkgs,
 ...}:
 {
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
 
-  # To disable installing GNOME's suite of applications
-  # and only be left with GNOME shell.
+  #login and session
+  #services.displayManager.gdm.enable = true;
+  #ervices.desktopManager.gnome.enable = true;
+
+  #gnome
   services.gnome.core-apps.enable = true;
   services.gnome.core-developer-tools.enable = true;
   services.gnome.games.enable = false;

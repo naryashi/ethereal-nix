@@ -7,7 +7,7 @@
 {
   imports =
     [ 
-      #./DE/gnome.nix
+     #./DE/gnome.nix
       ./DE/gnome-apps.nix
       ./DE/kde.nix
       ./fs.nix
