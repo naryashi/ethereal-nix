@@ -4,8 +4,8 @@
   {
 
    fileSystems = {
-  "/".options = [ "compress=zstd:5" ];
-  "/home".options = [ "compress=zstd:5" ];
+  "/".options = [ "compress=zstd:3" ];
+  "/home".options = [ "compress=zstd:3" ];
 
    };
 

@@ -7,7 +7,9 @@ config,
   libratbag
   opentabletdriver
   nh
-
+  wget
+  unzip
+  zenity
   ];
 
 

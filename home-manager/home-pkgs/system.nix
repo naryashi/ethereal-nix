@@ -23,6 +23,9 @@ config,
  grc 
  starship
  tree 
+ wget
+ unzip
+ zenity
 
  #fonts
  nerd-fonts.adwaita-mono

@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ 
+    [     
      #./DE/gnome.nix
       ./DE/gnome-apps.nix
       ./DE/kde.nix
@@ -16,6 +16,7 @@
       ./services/services.nix
       ./services/programs.nix
       ./system-pkgs.nix
+
     ];
    
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
