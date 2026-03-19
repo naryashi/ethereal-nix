@@ -18,7 +18,6 @@ a minimal nix config, thanks thou vow for supporter.
 └── system-config
     ├── configuration.nix
     ├── DE
-    │   ├── cosmic.nix
     │   ├── gnome-apps.nix
     │   ├── gnome.nix
     │   └── kde.nix
