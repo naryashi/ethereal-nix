@@ -23,7 +23,6 @@ a minimal nix config, thanks thou vow for supporter.
     │   └── kde.nix
     ├── fs.nix
     ├── hardware-configuration.nix
-    ├── nvidia.nix
     ├── services
     │   ├── programs.nix
     │   └── services.nix
@@ -38,13 +37,13 @@ a minimal nix config, thanks thou vow for supporter.
 └─nvme0n1p4 259:4    0 355,8G  0 part /home
 ```
 ## **setup**:
-- CPU:i7 4th
-- GPU:gtx 1060 3GB 
-- RAM:32GB DDR3
+- CPU:i5 8th
+- RAM:16GB DDR4
+- integrated gpu (UHD620)
 
 ## **DE** :
 - KDE Plasma 🙏 
 - KWin (Wayland)
 
 ## **current packages**:
-1455 (nix-system), 962 (nix-user), 27 (flatpak-user)
+1453 (nix-system), 964 (nix-user), 26 (flatpak-user)
