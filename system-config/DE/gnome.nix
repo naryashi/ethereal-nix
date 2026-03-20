@@ -4,8 +4,8 @@ pkgs,
 {
 
   #login and session
-  #services.displayManager.gdm.enable = true;
-  #ervices.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   #gnome
   services.gnome.core-apps.enable = true;
