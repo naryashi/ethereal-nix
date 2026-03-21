@@ -12,17 +12,27 @@
     
     #nix gaming
     nix-gaming.url = "github:fufexan/nix-gaming";
-
+   
+    #notebook moment
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+  
   };
 
-  outputs = {self, nixpkgs, home-manager, ...} @ inputs: 
+  outputs = {self,
+  nixpkgs,
+  home-manager,
+  nixos-hardware,
+  ...}
+  @inputs: 
   {
 
    nixosConfigurations = {
      "nyako" = nixpkgs.lib.nixosSystem {
        specialArgs = {inherit inputs;};
        system = "x86_64-linux";
-       modules = [ ./system-config/configuration.nix ];
+       modules = [ ./system-config/configuration.nix 
+       nixos-hardware.nixosModules.lenovo-thinkpad-t480
+       ];
      };
    }; 
    

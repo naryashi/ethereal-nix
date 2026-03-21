@@ -1,23 +1,21 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
+{ 
+config,
+pkgs,
+... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
-      #./DE/gnome.nix
-      ./DE/gnome-apps.nix
+    [ 
+      #./DE/gnome-apps.nix
       ./DE/kde.nix
       ./fs.nix
       ./hardware-configuration.nix
       ./services/services.nix
       ./services/programs.nix
       ./system-pkgs.nix
+
     ];
-  
-   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+   
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.variables.NH_FLAKE = "/ethereal";
   environment.variables.NH_OS_FLAKE = "/ethereal";
@@ -27,14 +25,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
+  #kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
+  #network
   networking.hostName = "nyako"; # Define your hostname.
-   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-
-  # Enable networking
+ # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -55,12 +50,11 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # Enable the X11 windowing system.
- # services.xserver.enable = true;
+  services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  #services.displayManager.sddm.enable = true;
+  #services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -82,8 +76,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -95,28 +87,34 @@
     description = "emi";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-
+      kdePackages.kate
+    #  thunderbird
     ];
   };
 
- 
-  programs.firefox.enable = true;
+  # Install firefox.
+  #programs.firefox.enable = true;
 
-
-  nixpkgs.config.allowUnfree = true;
-
+  # Allow unfree packages
+  #nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
 
   ];
 
 
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-   networking.firewall.enable = true;
-
-
+  networking.firewall.enable = true;
+ 
+  #nix version
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
