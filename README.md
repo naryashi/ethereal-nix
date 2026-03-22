@@ -23,6 +23,7 @@ a minimal nix config, thanks thou vow for supporter.
     │   └── kde.nix
     ├── fs.nix
     ├── hardware-configuration.nix
+    ├── hardware.nix
     ├── services
     │   ├── programs.nix
     │   └── services.nix
@@ -37,7 +38,8 @@ a minimal nix config, thanks thou vow for supporter.
 └─nvme0n1p4 259:4    0 355,8G  0 part /home
 ```
 ## **setup**:
-- CPU:i5 8th
+- thinkpad T480
+- CPU:i5 8350u
 - RAM:16GB DDR4
 - integrated gpu (UHD620)
 
@@ -46,4 +48,4 @@ a minimal nix config, thanks thou vow for supporter.
 - KWin (Wayland)
 
 ## **current packages**:
-1453 (nix-system), 964 (nix-user), 26 (flatpak-user)
+1419 (nix-system), 1321 (nix-user), 25 (flatpak-user)
