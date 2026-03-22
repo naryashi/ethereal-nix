@@ -39,5 +39,13 @@ pkgs,
     fishPlugins.puffer
     fishPlugins.pisces
     fishPlugins.hydro
-  ];
+  ]; 
+   
+  programs.fish.shellAliases = {
+  off = "shutdown now";
+  upd-all = "nh os switch -u && nh home switch -u";
+  osu-wine = "steam-run osu-wine";
+  };
+
+
 }

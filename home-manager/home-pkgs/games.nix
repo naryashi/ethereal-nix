@@ -12,7 +12,6 @@ inputs,
  steam
  steam-run
  heroic
- osu-lazer-bin
  protonup-ng
 
   ];

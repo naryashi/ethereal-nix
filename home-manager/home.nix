@@ -12,7 +12,6 @@ lib,
   ./home-pkgs/others.nix
   ./home-pkgs/system.nix
   ./home-programs.nix
-  
  ];
 
   #home

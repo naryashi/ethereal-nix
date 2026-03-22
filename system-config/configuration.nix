@@ -12,7 +12,7 @@ pkgs,
       ./services/services.nix
       ./services/programs.nix
       ./system-pkgs.nix
-
+      ./hardware.nix
     ];
    
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -20,13 +20,15 @@ pkgs,
   environment.variables.NH_FLAKE = "/ethereal";
   environment.variables.NH_OS_FLAKE = "/ethereal";
   environment.variables.NH_HOME_FLAKE = "/ethereal";
-
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  #kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  
+  #kernel. 
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = with pkgs; linuxPackagesFor linuxPackages_cachyos;
+  
   #network
   networking.hostName = "nyako"; # Define your hostname.
  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
