@@ -26,7 +26,10 @@ a minimal nix config, thanks thou vow for supporter.
     ├── hardware.nix
     ├── services
     │   ├── programs.nix
-    │   └── services.nix
+    │   ├── services.nix
+    │   └── settings.nix
+    ├── specialisation
+    │   └── powersave.nix
     └── system-pkgs.nix
 ```
 # **storage**:
