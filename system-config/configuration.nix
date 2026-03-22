@@ -1,6 +1,8 @@
 { 
 config,
 pkgs,
+inputs,
+lib,
 ... }:
 {
   imports =
@@ -13,21 +15,11 @@ pkgs,
       ./services/programs.nix
       ./system-pkgs.nix
       ./hardware.nix
+      ./services/settings.nix
+      ./specialisation/powersave.nix
     ];
-   
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  environment.variables.NH_FLAKE = "/ethereal";
-  environment.variables.NH_OS_FLAKE = "/ethereal";
-  environment.variables.NH_HOME_FLAKE = "/ethereal";
-  
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  
-  #kernel. 
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = with pkgs; linuxPackagesFor linuxPackages_cachyos;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   #network
   networking.hostName = "nyako"; # Define your hostname.
@@ -104,18 +96,11 @@ pkgs,
 
   ];
 
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
+  #firewall
   networking.firewall.enable = true;
- 
+  
+
+
   #nix version
   system.stateVersion = "25.11"; # Did you read the comment?
 

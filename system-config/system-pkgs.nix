@@ -7,6 +7,8 @@ config,
   libratbag
   nh
   auto-cpufreq
+  opentabletdriver
+
   ];
 
 

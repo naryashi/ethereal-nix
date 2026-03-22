@@ -15,16 +15,12 @@
    
     #notebook moment
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    
-    #cachyos kernel
-    nixos-cachyos-kernel.url = "github:drakon64/nixos-cachyos-kernel";
   }; 
 
   outputs = {self,
   nixpkgs,
   home-manager,
   nixos-hardware,
-  nixos-cachyos-kernel,
   ...}
   @inputs: 
   {
@@ -34,14 +30,13 @@
        specialArgs = {inherit inputs;};
        system = "x86_64-linux";
        modules = [ ./system-config/configuration.nix 
+       #optimization for my notebook
        nixos-hardware.nixosModules.lenovo-thinkpad-t480
-       nixos-cachyos-kernel.nixosModules.default
+     
        ];
      };
-   }; 
-   
-   #cachix
-  
+     };
+    #cachix
     nix.settings = {
     substituters = ["https://nix-gaming.cachix.org"];
      trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
@@ -55,9 +50,9 @@
        };
        
      };      
-     
+        
    };
    
- }
+}
 
 
