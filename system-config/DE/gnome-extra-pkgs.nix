@@ -2,11 +2,16 @@
 pkgs,
 ...}:
 {
+  environment.systemPackages = with pkgs;
+  [
+   baobab
+   gnome-disk-utility
 
-  #login and session
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+   #manager
+   gnome-tweaks
+   gnome-extension-manager
 
+  ];
   #gnome
   services.gnome.core-apps.enable = true;
   services.gnome.core-developer-tools.enable = true;

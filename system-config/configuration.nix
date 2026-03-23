@@ -1,22 +1,23 @@
 { 
 config,
 pkgs,
-inputs,
-lib,
 ... }:
 {
   imports =
     [ 
-      #./DE/gnome-apps.nix
-      ./DE/kde.nix
-      ./fs.nix
-      ./hardware-configuration.nix
+      ./DE/DM.nix
+      ./DE/gnome-extensions.nix
+      ./DE/gnome-extra-pkgs.nix
+      ./DE/kde-pkgs.nix
+      ./login-manager/login-manager.nix
       ./services/services.nix
       ./services/programs.nix
-      ./system-pkgs.nix
-      ./hardware.nix
       ./services/settings.nix
       ./specialisation/powersave.nix
+      ./fs.nix
+      ./hardware-configuration.nix
+      ./hardware.nix
+      ./system-pkgs.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -82,16 +83,10 @@ lib,
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
+      kdePackages.dolphin
     #  thunderbird
     ];
   };
-
-  # Install firefox.
-  #programs.firefox.enable = true;
-
-  # Allow unfree packages
-  #nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
 
   ];

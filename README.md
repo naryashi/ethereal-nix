@@ -18,12 +18,15 @@ a minimal nix config, thanks thou vow for supporter.
 └── system-config
     ├── configuration.nix
     ├── DE
-    │   ├── gnome-apps.nix
-    │   ├── gnome.nix
-    │   └── kde.nix
+    │   ├── DM.nix
+    │   ├── gnome-extensions.nix
+    │   ├── gnome-extra-pkgs.nix
+    │   └── kde-pkgs.nix
     ├── fs.nix
     ├── hardware-configuration.nix
     ├── hardware.nix
+    ├── login-manager
+    │   └── login-manager.nix
     ├── services
     │   ├── programs.nix
     │   ├── services.nix
@@ -31,6 +34,8 @@ a minimal nix config, thanks thou vow for supporter.
     ├── specialisation
     │   └── powersave.nix
     └── system-pkgs.nix
+
+8 directories, 23 files
 ```
 # **storage**:
 ```

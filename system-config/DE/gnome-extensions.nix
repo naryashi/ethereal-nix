@@ -4,15 +4,7 @@ pkgs,
 {
 
  environment.systemPackages = with pkgs; [
-
-   #others
-   baobab
-   gnome-disk-utility
-
-   #manager
-   gnome-tweaks
-   gnome-extension-manager
-
+  
    #extensions
    gnomeExtensions.blur-my-shell
    gnomeExtensions.caffeine

@@ -7,8 +7,8 @@ config,
   libratbag
   nh
   auto-cpufreq
-  opentabletdriver
-
+  thinkfan
+  powertop
   ];
 
 

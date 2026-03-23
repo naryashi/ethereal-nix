@@ -13,15 +13,15 @@ lib,
     
     services.power-profiles-daemon.enable = true;
     
-    powerManagement.cpuFreqGovernor = "performance";
+    powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
 
-    services.auto-cpufreq.settings = {
+    services.auto-cpufreq.settings = lib.mkDefault {
      battery = {
       governor = "powersave";
        turbo = "never";
     };
-     charger = {
-      governor = "performance";
+     charger = lib.mkForce{
+      governor = lib.mkDefault "performance";
        turbo = "always";
     };
   };
