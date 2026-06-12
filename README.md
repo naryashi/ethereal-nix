@@ -16,23 +16,29 @@ Special thanks to [thou vow](https://github.com/thou-vow) for support.
 | CPU | Ryzen 5 5600U |
 | RAM | 16GB DDR4 (3200 MHz) |
 | GPU | AMD Radeon Graphics (integrated) |
-| Desktop | KDE Plasma / KWin (Wayland) |
+| Desktop | GNOME / Mutter (Wayland) |
 
 ---
 
 ## Storage Layout
 ```
-nvme0n1       259:0    0 476,9G  0 disk  
-├─nvme0n1p1   259:1    0     2G  0 part  /boot
-├─nvme0n1p2   259:2    0  16,1G  0 part  [SWAP]
-├─nvme0n1p3   259:3    0 329,1G  0 part  /home
-└─nvme0n1p4   259:4    0 129,7G  0 part 
+nvme0n1                 259:0    0 476,9G  0 disk  
+├─nvme0n1p1             259:1    0     1G  0 part  /boot
+├─nvme0n1p2             259:2    0    16G  0 part  [SWAP]
+├─nvme0n1p3             259:3    0  71,4G  0 part  
+└─nvme0n1p5             259:4    0 388,5G  0 part  /home
+
 ```
 ---
 
 ## Structure
 ```
 ├── desktop
+│   ├── gdm
+│   │   └── gdm.nix
+│   ├── gnome
+│   │   ├── default.nix
+│   │   └── packages.nix
 │   ├── kde
 │   │   ├── default.nix
 │   │   └── packages.nix
@@ -45,6 +51,10 @@ nvme0n1       259:0    0 476,9G  0 disk
 ├── flake.lock
 ├── flake.nix
 ├── home-manager
+│   ├── desktop
+│   │   └── gnome
+│   │       ├── extensions.nix
+│   │       └── settings.nix
 │   ├── dev
 │   │   ├── editors
 │   │   │   └── zed.nix
@@ -82,16 +92,14 @@ nvme0n1       259:0    0 476,9G  0 disk
 │   └── powersave.nix
 └── README.md
 
-17 directories, 33 files
+21 directories, 38 files
+
 ```
-<<<<<<< HEAD
-=======
---
->>>>>>> 00a4acbea651a7173abeb7219c99090f01e376f4
 ---
 ## Current Packages
 
-5 (flatpak), 1918 (nix-system), 2068 (nix-user)
+6 (flatpak), 1736 (nix-system), 1064 (nix-user)
+
 
 ---
 
