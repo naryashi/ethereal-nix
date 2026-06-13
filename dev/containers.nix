@@ -11,7 +11,8 @@
     podman-compose
     buildah
     skopeo
-
+    distroshelf
+    distrobox
     devpod
     lazydocker
   ];

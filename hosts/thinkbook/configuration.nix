@@ -9,6 +9,7 @@
     ../../desktop/gdm/gdm.nix
     ../../desktop/gnome/default.nix
     ../../desktop/gnome/packages.nix
+    #../../desktop/gnome/stylix.nix
     #../../desktop/kde/default.nix
     #../../desktop/kde/packages.nix
     #../../desktop/sddm/sddm.nix

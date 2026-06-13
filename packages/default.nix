@@ -11,6 +11,6 @@
     tlp
     thinkfan
     home-manager
-    github-desktop
+
   ];
 }

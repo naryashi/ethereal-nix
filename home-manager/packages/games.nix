@@ -12,7 +12,7 @@
     steam-run
     heroic
     protonup-ng
-    tetrio-desktop
+    osu-lazer-bin
   ];
 
   home.sessionVariables = {

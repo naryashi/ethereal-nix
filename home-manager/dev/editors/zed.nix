@@ -12,9 +12,7 @@
 
     extensions = [
       #themes
-      "Tokyo Night Themes"
-      "Github Theme"
-      "Catppuccin"
+      "base16"
 
       #icons
       "Catppucin Icons"
@@ -34,14 +32,19 @@
       rust-analyzer
     ];
 
+    defaultEditor = true;
+
     userSettings = {
-      theme = "Catppuccin Mocha";
-      icon_themes = "Catppucin Mocha";
+      theme = lib.mkDefault "Base16 pinky";
+      icon_themes = lib.mkForce "Catppucin Mocha";
       vim_mode = false;
-      ui_font_size = 18;
-      buffer_font_size = 14;
+      ui_font_size = lib.mkDefault 18;
+      buffer_font_size = lib.mkDefault 14;
       hour_format = lib.mkDefault "hour24";
       format_on_save = "language_server";
+      telemetry = {
+        metrics = false;
+      };
       lsp = {
         nil = {
           format_on_save = {

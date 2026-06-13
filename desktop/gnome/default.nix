@@ -14,6 +14,7 @@
   services.gnome.core-apps.enable = false;
   services.gnome.core-developer-tools.enable = false;
   services.gnome.games.enable = false;
+  services.gnome.localsearch.enable = false;
 
   #exclude pkgs
   environment.gnome.excludePackages = with pkgs; [

@@ -30,5 +30,8 @@
   programs.direnv = {
     enable = true;
   };
+  programs.seahorse = {
+    enable = true;
+  };
 
 }

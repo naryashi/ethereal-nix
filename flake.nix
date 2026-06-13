@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,6 +13,11 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
     thou-packages.url = "github:thou-vow/nix-packages";
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -18,6 +25,8 @@
       home-manager,
       nix-gaming,
       thou-packages,
+      stylix,
+      chaotic,
       ...
     }@inputs:
     let
@@ -31,6 +40,8 @@
       nixosConfigurations.kinni = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
+          chaotic.nixosModules.default
+          stylix.nixosModules.stylix
           ./hosts/thinkbook/configuration.nix
           ./hosts/thinkbook/hardware.nix
           ./hosts/thinkbook/hardware-configuration.nix

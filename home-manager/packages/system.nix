@@ -35,6 +35,7 @@
     wget
     unzip
     zenity
+    alacritty
 
     #fonts
     nerd-fonts.adwaita-mono
