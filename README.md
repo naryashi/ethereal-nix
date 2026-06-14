@@ -38,7 +38,8 @@ nvme0n1                 259:0    0 476,9G  0 disk
 │   │   └── gdm.nix
 │   ├── gnome
 │   │   ├── default.nix
-│   │   └── packages.nix
+│   │   ├── packages.nix
+│   │   └── stylix.nix
 │   ├── kde
 │   │   ├── default.nix
 │   │   └── packages.nix
@@ -72,6 +73,7 @@ nvme0n1                 259:0    0 476,9G  0 disk
 │   └── thinkbook
 │       ├── boot.nix
 │       ├── configuration.nix
+│       ├── fs.nix
 │       ├── hardware-configuration.nix
 │       └── hardware.nix
 ├── modules
@@ -92,7 +94,7 @@ nvme0n1                 259:0    0 476,9G  0 disk
 │   └── powersave.nix
 └── README.md
 
-21 directories, 38 files
+21 directories, 40 files
 
 ```
 ---
