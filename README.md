@@ -1,4 +1,4 @@
-# ethereal-nix ❄️
+# pure-nix ❄️
 
 A minimal NixOS configuration for daily driving.
 
